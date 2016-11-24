@@ -6,12 +6,14 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<properties>
         <!-- Project dependant variables -->
-        <custom.path>ch/fhnw/</custom.path>
+        <custom.src.path1>ch/fhnw/jbackpack</custom.src.path1>
+		<custom.src.path2>ch/fhnw/util</custom.src.path2>
         <custom.main.class>ch.fhnw.jbackpack.JBackpack</custom.main.class>
         <custom.checkstyle>config/checkstyle.xml</custom.checkstyle>
 
         <!-- Project independant variables -->
-        <custom.source>src/${custom.path}</custom.source>
+        <custom.source1>src/${custom.src.path1}</custom.source1>
+		<custom.source2>src/${custom.src.path2}</custom.source2>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<!-- To make the output of the javadoc support utf-8 -->
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
@@ -22,10 +24,14 @@
 			<id>jitpack.io</id>
 			<url>https://jitpack.io</url>
 		</repository>
+		<repository>
+			<id>OpenNMS</id>
+			<url>http://repo.opennms.org/maven2/</url>
+		</repository>
 	</repositories>
 
 	<build>
-        <sourceDirectory>${custom.source}</sourceDirectory>
+        <sourceDirectory>${custom.source1}</sourceDirectory>
 
         <plugins>
 			<plugin>
@@ -76,7 +82,19 @@
                 <artifactId>build-helper-maven-plugin</artifactId>
                 <version>1.12</version>
                 <executions>
-                    <execution>
+					<execution>
+						<id>add-source</id>
+						<phase>generate-sources</phase>
+						<goals>
+							<goal>add-source</goal>
+						</goals>
+						<configuration>
+							<sources>
+								<source>${custom.source2}</source>
+							</sources>
+						</configuration>
+					</execution>
+					<execution>
                         <id>add-resource</id>
                         <phase>generate-resources</phase>
                         <goals>
@@ -85,8 +103,8 @@
                         <configuration>
                             <resources>
                                 <resource>
-                                    <directory>${custom.source}</directory>
-                                    <targetPath>${custom.path}</targetPath>
+                                    <directory>${custom.source1}</directory>
+                                    <targetPath>${custom.src.path1}</targetPath>
                                     <excludes>
                                         <exclude>*.java</exclude>
                                         <exclude>/**/</exclude>
@@ -202,6 +220,21 @@
 			<artifactId>lernstickTools</artifactId>
 			<version>2</version>
 		</dependency>
+
+		<!-- jh.jar -->
+		<dependency>
+			<groupId>javax.help</groupId>
+			<artifactId>javahelp</artifactId>
+			<version>[2.0.05,]</version>
+		</dependency>
+
+		<!-- jnlp.jar -->
+		<dependency>
+			<groupId>javax.jnlp</groupId>
+			<artifactId>jnlp</artifactId>
+			<version>1.5.0</version>
+		</dependency>
+
 
 	</dependencies>
 
