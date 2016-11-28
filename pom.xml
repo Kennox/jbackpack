@@ -8,12 +8,14 @@
         <!-- Project dependant variables -->
         <custom.src.path1>ch/fhnw/jbackpackfx</custom.src.path1>
 		<custom.src.path2>ch/fhnw/util</custom.src.path2>
-        <custom.main.class>ch.fhnw.jbackpackfx.JBackpack</custom.main.class>
+        <custom.main.class>ch.fhnw.jbackpackfx.JbackpackApp</custom.main.class>
         <custom.checkstyle>config/checkstyle.xml</custom.checkstyle>
 
         <!-- Project independant variables -->
+        <custom.test.source>test/${custom.src.path1}</custom.test.source>
         <custom.source1>src/${custom.src.path1}</custom.source1>
 		<custom.source2>src/${custom.src.path2}</custom.source2>
+
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<!-- To make the output of the javadoc support utf-8 -->
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
@@ -32,7 +34,7 @@
 
 	<build>
         <sourceDirectory>${custom.source1}</sourceDirectory>
-
+        <testSourceDirectory>${custom.test.source}</testSourceDirectory>
         <plugins>
 			<plugin>
 				<artifactId>maven-compiler-plugin</artifactId>
