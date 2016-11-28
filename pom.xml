@@ -6,9 +6,9 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<properties>
         <!-- Project dependant variables -->
-        <custom.src.path1>ch/fhnw/jbackpack</custom.src.path1>
+        <custom.src.path1>ch/fhnw/jbackpackfx</custom.src.path1>
 		<custom.src.path2>ch/fhnw/util</custom.src.path2>
-        <custom.main.class>ch.fhnw.jbackpack.JBackpack</custom.main.class>
+        <custom.main.class>ch.fhnw.jbackpackfx.JBackpack</custom.main.class>
         <custom.checkstyle>config/checkstyle.xml</custom.checkstyle>
 
         <!-- Project independant variables -->
