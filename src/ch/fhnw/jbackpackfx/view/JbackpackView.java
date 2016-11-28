@@ -8,7 +8,7 @@ public class JbackpackView extends Parent { // change Parent to GridPane etc.
 
   //declare all elements here
 
-  /** Javadoc comment here */
+  /** Javadoc comment here. */
   public JbackpackView(Jbackpack model) {
     this.model = model;
 

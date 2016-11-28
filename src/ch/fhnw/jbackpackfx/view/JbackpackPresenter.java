@@ -6,7 +6,7 @@ public class JbackpackPresenter {
   private final Jbackpack model;
   private final JbackpackView view;
 
-  /** Javadoc comment here */
+  /** Javadoc comment here. */
   public JbackpackPresenter(Jbackpack model, JbackpackView view) {
     this.model = model;
     this.view = view;
