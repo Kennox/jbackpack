@@ -1,12 +1,11 @@
-package model;
+package ch.fhnw.jbackpackfx.model;
 
+//import static org.junit.Assert.*; Don't import with * notation.
 import org.junit.Before;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
-
 /**
- *
+ * JavaDoc comment here.
  */
 public class JbackpackTest {
   @Before
